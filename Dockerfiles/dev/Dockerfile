@@ -10,6 +10,7 @@ RUN mkdir /workspace && chown pipelines:pipelines /workspace
 VOLUME /workspace
 WORKDIR /workspace
 
+
 ENV ADMIN_USER admin
 ENV ADMIN_PASS admin
 ENV WORKSPACE /workspace
