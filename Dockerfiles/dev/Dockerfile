@@ -5,8 +5,7 @@ RUN groupadd -r pipelines && useradd -m -r -g pipelines pipelines
 
 # Install pipelines
 RUN /usr/local/bin/python -m pip install --upgrade pip
-#RUN pip install git+git://github.com/Wiredcraft/pipelines@master
-RUN pip install pipelines
+RUN pip install git+git://github.com/Wiredcraft/pipelines@master
 RUN mkdir /workspace && chown pipelines:pipelines /workspace
 VOLUME /workspace
 WORKDIR /workspace
@@ -14,10 +13,6 @@ WORKDIR /workspace
 ENV ADMIN_USER admin
 ENV ADMIN_PASS admin
 ENV WORKSPACE /workspace
-
-COPY docker-entrypoint.sh /usr/local/bin/
-RUN ln -s /usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
-ENTRYPOINT ["docker-entrypoint.sh"]
 
 EXPOSE 8888
 
