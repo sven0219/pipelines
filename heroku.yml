@@ -1,0 +1,3 @@
+build:
+  docker:
+    web: Dockerfiles/dev/Dockerfile
