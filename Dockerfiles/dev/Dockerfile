@@ -4,6 +4,7 @@ FROM python:3.6
 RUN groupadd -r pipelines && useradd -m -r -g pipelines pipelines
 
 # Install pipelines
+RUN /usr/local/bin/python -m pip install --upgrade pip
 RUN pip install git+git://github.com/Wiredcraft/pipelines@master
 
 RUN mkdir /workspace && chown pipelines:pipelines /workspace
